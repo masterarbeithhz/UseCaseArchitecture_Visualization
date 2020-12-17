@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: visualization-service
+  labels:
+    app: visualization
+spec:
+  selector:
+    app: visualization
+  ports:
+    - name: http
+      port: 80
+---
+#Definition Reverse-Proxy für einen Service
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: visualization-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /visualization/(.*)
+          backend:
+            serviceName: visualization-service
+            servicePort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: visualization
+  labels:
+    app: visualization
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: visualization
+  template:
+    metadata:
+      labels:
+        app: visualization
+    spec:
+      containers:
+      - name: visualization
+        image: masterarbeithhz/usecasepaxcounter:JSVAR_DOCKERIMAGE
