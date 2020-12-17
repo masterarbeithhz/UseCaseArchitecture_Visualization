@@ -2,7 +2,6 @@ pipeline {
 
   environment {
     registryCredential = 'dockerhub'
-    imagefolder = "masterarbeithhz/usecasepaxcounter:"
     imagetag = "visualization${env.BUILD_ID}"
     giturl = 'https://github.com/masterarbeithhz/UseCaseArchitecture_Visualization.git'
   }
@@ -20,7 +19,7 @@ pipeline {
       stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("${imagefolder}+${imagetag}")
+                    myapp = docker.build("masterarbeithhz/usecasepaxcounter:${imagetag}")
                 }
             }
         }
@@ -39,7 +38,7 @@ pipeline {
         steps {
           script {
             def data = readFile file: "kubmanifest.yaml"
-            data = data.replaceAll("JSVAR_DOCKERIMAGE", "${imagefolder}+${imagetag}")
+            data = data.replaceAll("JSVAR_DOCKERIMAGE", "${imagetag}")
             echo data
             writeFile file: "kubmanifest.yaml", text: data
           }

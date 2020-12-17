@@ -45,4 +45,4 @@ spec:
     spec:
       containers:
       - name: visualization
-        image: JSVAR_DOCKERIMAGE
+        image: masterarbeithhz/usecasepaxcounter:JSVAR_DOCKERIMAGE
