@@ -2,7 +2,7 @@ pipeline {
 
   environment {
     registryCredential = 'dockerhub'
-    imagetag = "visualization${env.BUILD_ID}"
+    imagetag = "masterarbeithhz/usecasepaxcounter:visualization${env.BUILD_ID}"
     giturl = 'https://github.com/masterarbeithhz/UseCaseArchitecture_Visualization.git'
   }
   
@@ -19,7 +19,7 @@ pipeline {
       stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("masterarbeithhz/usecasepaxcounter:${imagetag}")
+                    myapp = docker.build("${imagetag}")
                 }
             }
         }
