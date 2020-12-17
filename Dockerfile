@@ -26,7 +26,7 @@ RUN mkdir /var/www/js
 EXPOSE 80
 
 # Copy this repo into place.
-COPY image_files /var/www/html/image_files 
+COPY image_files /var/www/html/
 
 # Update the default apache site with the config we created.
 #ADD apache-config.conf /etc/apache2/sites-enabled/000-default.conf
