@@ -26,6 +26,8 @@ spec:
           value: testdb
         - name: UC_DBPSWD
           value: Philipp1
+        - name: UC_DOMAIN
+          value: http://hhz.regel-it.de
 ---
 apiVersion: v1
 kind: Service
