@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$conn = mysqli_connect("mysql-service","root","Philipp1","testdb");
+$conn = mysqli_connect("mysquc","root","Philipp1","testdb");
 
 $sqlQuery = "SELECT id,received_at,dev_location_name,pax_counter FROM nodeRedResults ORDER BY id";
 
