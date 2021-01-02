@@ -20,6 +20,12 @@ spec:
         env:
         - name: UC_DBNAME
           value: mysquc-service
+        - name: UC_DBUSER
+          value: root
+        - name: UC_DBDB
+          value: testdb
+        - name: UC_DBPSWD
+          value: Philipp1
 ---
 apiVersion: v1
 kind: Service
