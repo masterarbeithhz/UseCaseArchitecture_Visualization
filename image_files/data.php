@@ -1,6 +1,6 @@
 <?php
 #test environment varialbe
-define("DATABASENAME", getenv('UC_DBNAME'));
+include('envVariables.php');
 #--------------
 header('Content-Type: application/json');
 
