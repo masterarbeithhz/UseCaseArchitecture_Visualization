@@ -66,8 +66,8 @@
                             console.log(pax_counter);
                             pax_counts.push(pax_counter);
                         }
-                        console.log("pax_counter Ergebniss:" + pax_counts);
-                        console.log("locations Ergebniss:" + locations);
+                        console.log("pax_counter Ergebnis:" + pax_counts);
+                        console.log("locations Ergebnis:" + locations);
                         console.log("pax_counter length:" + pax_counts.length);
                         console.log("locations length:" + locations.length);
 
