@@ -1,7 +1,10 @@
 <?php
+#test environment varialbe
+define("DATABASENAME", getenv('UC_DBNAME'));
+#--------------
 header('Content-Type: application/json');
 
-$conn = mysqli_connect("mysquc-service","root","Philipp1","testdb");
+$conn = mysqli_connect($DATABASENAME,"root","Philipp1","testdb");
 
 $sqlQuery_readings = "SELECT dev_id,received_at,count_wifi,count_ble FROM readings ORDER BY dev_id";
 $sqlQuery_devices = "SELECT dev_id,dev_location_name,dev_latitude,dev_longitude FROM devices ORDER BY dev_id";

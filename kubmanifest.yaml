@@ -17,6 +17,9 @@ spec:
       containers:
       - name: ucvisualization
         image: JSVAR_DOCKERIMAGE
+        env:
+        - name: UC_DBNAME
+          value: mysquc-service
 ---
 apiVersion: v1
 kind: Service
