@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>4Pax-Counter - Creating Dynamic Data Graph using PHP and Chart.js</title>
+    <title>Pax-Counter - Creating Dynamic Data Graph using PHP and Chart.js</title>
     <style type="text/css">
         BODY {
             width: 550PX;
