@@ -1,6 +1,6 @@
 <?php
 #test environment varialbe
-include('/envVariables.php');
+include('envVariables.php');
 #--------------
 header('Content-Type: application/json');
 
