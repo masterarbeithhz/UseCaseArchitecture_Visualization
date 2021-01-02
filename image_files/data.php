@@ -4,7 +4,7 @@ include('envVariables.php');
 #--------------
 header('Content-Type: application/json');
 
-$conn = mysqli_connect(DATABASENAME,"root","Philipp1","testdb");
+$conn = mysqli_connect(DATABASENAME,DATABASEUSER,DATABASEPSWD,DATABASEDB);
 
 $sqlQuery_readings = "SELECT dev_id,received_at,count_wifi,count_ble FROM readings ORDER BY dev_id";
 $sqlQuery_devices = "SELECT dev_id,dev_location_name,dev_latitude,dev_longitude FROM devices ORDER BY dev_id";
