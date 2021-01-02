@@ -1,7 +1,14 @@
+#Definition Namespace für alle Ressourcen
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: JSVAR_NAMESPACE
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ucvisualization
+  namespace: JSVAR_NAMESPACE
   labels:
     app: ucvisualization
 spec:
@@ -33,6 +40,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ucvisualization-service
+  namespace: JSVAR_NAMESPACE
 spec:
   type: NodePort
   selector:
@@ -46,13 +54,14 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: ucvisualization-ingress
+  namespace: JSVAR_NAMESPACE
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
   - http:
       paths:
-        - path: /ucvisualization/(.*)
+        - path: /JSVAR_NAMESPACE/ucvisualization/(.*)
           backend:
             serviceName: ucvisualization-service
             servicePort: 80
